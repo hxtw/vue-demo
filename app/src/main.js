@@ -3,12 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import vueResource from './vue-resource'
+// import vueResource from './vue-resource'
 // import Vuex from './vuex'
 import layer from '../static/layer.m'
 
 Vue.config.productionTip = false
-Vue.use(vueResource);
+// Vue.use(vueResource);
 // Vue.use(Vuex);
 Vue.use(layer);
 
