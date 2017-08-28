@@ -1,7 +1,14 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+    <header class="header" v-if="$store.state.header">
+      <a class="go_return" @touchstart.stop.prevent="$store.state.left.click" v-text="$store.state.left.text" v-bind:style="{ backgroundImage: $store.state.left.img}"></a>
+      <p>{{$store.state.title}}</p>
+      <a v-bind:style="{ backgroundImage: $store.state.right.img}"  class="right_btn" @touchstart.stop.prevent='$store.state.right.click'></a>
+    </header>
+    <div style="height:1.26rem;width:100%"></div>
+    <transition name='fade' type='animation'>
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
