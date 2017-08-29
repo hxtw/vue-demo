@@ -1,0 +1,29 @@
+*{
+  margin:0;
+  padding:0;
+  border:none;
+  box-sizing:border-box;
+}
+ul,li,ol,dl{
+  list-style:none;
+}
+blockquote,q{
+  quotes:none;
+}
+blockquote:before,blockquote:after,q:before,q:after{
+  content:'';
+  content:none;
+}
+table {
+  border-collapse: collapse; /*border-collapse 属性设置表格的边框是否被合并为一个单一的边框，还是象在标准的 HTML 中那样分开显示。*/
+  border-spacing: 0; /*属性设置相邻单元格的边框间的距离（仅用于“边框分离”模式）。*/
+}
+a{
+  text-decoration: none;
+}
+.txt-rt{
+  text-align:right;
+}
+.txt-lr{
+  text-align:left;
+}
