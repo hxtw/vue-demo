@@ -4,6 +4,7 @@ import Hello from '@/components/Hello'
 import ParentIndex from'@/components/parent/index'
 import List from '@/components/parent/list'
 import Login from '@/components/parent/login'
+import LoginMobile from '@/components/parent/loginMobile'
 
 Vue.use(Router)
 
@@ -28,7 +29,12 @@ export default new Router({
           path:'/parent/login',
           name:'login',
           component:Login
-        }
+        },
+        {
+          path:'/parent/loginMobile',
+          name:'loginMobile',
+          component:LoginMobile
+        },
       ]
     }
   ]

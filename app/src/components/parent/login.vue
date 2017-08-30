@@ -1,5 +1,6 @@
 <style scoped>
   @import "../../../static/css/login.css";
+  @import "../../../static/need/layer.css";
 </style>
 <template>
     <div>
@@ -61,7 +62,8 @@
     </div>
 </template>
 <script>
-
+    import { required, minLength, between} from 'vuelidate/lib/validators'
+    import validate from '../../tools/validate'
     export default {
         name: 'login',
         props:{
@@ -75,12 +77,32 @@
               }
             }
         },
+      validations:{
+        sub:{
+          name:{
+            required,
+            minLength:minLength(2)
+          },
+          password:{
+            required
+          },
+          email:{
+              required
+          }
+        }
+      },
       created:function(){
       },
       methods:{
           getSub:function(){
-              let that = this;
-            console.log(that.sub)
+            let that = this;
+            if(!validate.name(that.sub.name)){
+                layer.msg("请检查姓名")
+            }
+            if(!validate.password(that.sub.password)){
+                layer.msg("请输入密码")
+            }
+            window.location.href = ""
           }
       }
     }
