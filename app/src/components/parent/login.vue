@@ -1,13 +1,16 @@
+<style scoped>
+  @import "../../../static/css/login.css";
+</style>
 <template>
     <div>
       <h1>登录表单</h1>
-      <div class="container w3layouts agileits">
+      <div class="container w3layouts agileits" v-model="sub">
         <div class="login w3layouts agileits">
           <h2>登 录</h2>
-          <form>
-            <input type="text" name="username" placeholder="用户名"/>
-            <input type="password" name="password" placeholder="密码" />
-
+          <form @submit.prevent="getSub">
+            <input type="text" name="" v-model="sub.name"  placeholder="用户名" />
+            <!--<input type="text" placeholder="用户名"/>-->
+            <input type="password"v-model="sub.password"  placeholder="密码"/>
           <ul class="tick w3layouts agileits">
             <li>
               <input type="checkbox" id="brand1" value=""/>
@@ -41,9 +44,9 @@
           <h2>注 册</h2>
           <form>
             <input type="text" name="username" placeholder="用户名"/>
-            <input type="email" name="email" placeholder="邮箱"/>
             <input type="password" name="password" placeholder="密码"/>
-            <input type="mobile" name="mobile" placeholder="手机号"/>
+            <input type="text" name="email" placeholder="邮箱"/>
+            <input type="text" name="mobile" placeholder="手机号"/>
             <div class="send-button w3layouts agileits">
                 <input type="submit" value="免费注册">
             </div>
@@ -61,16 +64,25 @@
 
     export default {
         name: 'login',
+        props:{
+
+        },
         data () {
             return {
-
+              sub:{
+                name:'',
+                password:''
+              }
             }
         },
-//      created:function(){
-//        this.$store.commit('titleChange','登录');
-//      },
+      created:function(){
+      },
+      methods:{
+          getSub:function(){
+              let that = this;
+            console.log(that.sub)
+          }
+      }
     }
 </script>
-<style scoped>
-  @import "../../../static/css/login.css";
-</style>
+
