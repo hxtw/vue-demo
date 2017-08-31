@@ -2,10 +2,35 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>app</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, address=no, email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <title>练习</title>
   </head>
   <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script type="text/javascript">
+      /* 调节rem根值大小 */
+      var resizeREM = (function () {
+        var body_h = document.body.clientHeight;
+        var body_w = document.body.clientWidth;
+        document.querySelector("html").style["font-size"] = ((body_w / 1080) < 1 ? (body_w / 1080) * 100 : 100) + "px";
+      });
+      window.addEventListener('DOMContentLoaded', function () {
+        resizeREM();
+      });
+      window.onresize = function () {
+        resizeREM();
+      }
+    </script>
   </body>
 </html>
