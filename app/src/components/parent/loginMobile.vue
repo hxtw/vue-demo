@@ -12,9 +12,9 @@
       </div>
       <div class="content">
         <div class="loginform show">
-          <form>
-            <input type="text" placeholder="请输入用户名/手机号">
-            <input type="password" placeholder="请输入密码">
+          <form @submit.prevent="getSub">
+            <input type="text" v-model="sub.name" placeholder="请输入用户名/手机号">
+            <input type="password" v-model="sub.password" placeholder="请输入密码">
             <ul>
               <li>
                 <input type="checkbox" id="bland1">
@@ -35,16 +35,52 @@
           </form>
         </div>
       </div>
+        <div class="another">
+          <h1><span></span>使用第三方账号登录<span></span></h1>
+          <ul>
+            <li><img src="../../../static/img/QQ.png"></li>
+            <li><img src="../../../static/img/weixin.png"></li>
+            <li><img src="../../../static/img/weibo.png"></li>
+          </ul>
+        </div>
     </div>
     </div>
 </template>
 <script>
-
+    import {required,minLength} from 'vuelidate/lib/validators'
+    import validate from '../../tools/validate'
     export default {
-        name: '',
-        data () {
-            return {
-            }
-        },
+      name: '',
+      data () {
+        return {
+          sub:{
+            name:'',
+            password:''
+          }
+        }
+      },
+      validations:{
+        sub:{
+          name:{
+            required,
+            minLength:minLength(10)
+          }
+        }
+      },
+      methods:{
+        getSub:function(){
+            let that = this;
+
+          if(!validate.name(that.sub.name)){
+            console.log("用户名不能为空");
+            return false;
+          }
+          if(!validate.password(that.sub.password)){
+            console.log("密码不能为空");
+            return false;
+          }
+          window.location.href = "#/parent/login"
+        }
+      }
     }
 </script>

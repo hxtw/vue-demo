@@ -38,12 +38,13 @@ body{
 }
 .header ul li a{
   font-size:0.67rem;
-  /*color:#999999;*/
+  color:#999999;
 }
 .header ul li a:hover{
   color:cornflowerblue;
+  text-decoration: underline;
 }
-.header ul li.on{
+.header ul li.on a{
   text-decoration: underline;
   color:cornflowerblue;
 }
@@ -87,6 +88,31 @@ input[type="submit"]{
   height:1rem;
   border-radius: 25px 25px;
   font-size:0.5rem;
+}
+.another{
+  margin-top:1rem;
+}
+.another h1{
+  font-size:0.4rem;
+  color:#999999;
+  margin-left:2rem;
+}
+.another h1 span{
+  width:30%;
+  display: block;
+  text-decoration: line-through;
+}
+.another ul{
+  margin-left:1.5rem;
+}
+.another ul li {
+  float:left;
+  width:30%;
+  padding-left:0.3rem;
+}
+
+.another img{
+  width:70%;
 }
 .hide{
   display:none
