@@ -15,6 +15,10 @@ export default {
     if(!password){
       return false;
     }
+    if(/^[0-9a-zA-Z_#]{6,16}$/.test(password)){
+      return true;
+    }
+    return false;
   },
   mobile:function(mobile){
     let pattern = /(13\d|14[57]|15[^4,\D]|17[13678]|18\d)\d{8}|170[0589]\d{7}/,

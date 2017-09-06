@@ -5,6 +5,8 @@ import ParentIndex from'@/components/parent/index'
 import List from '@/components/parent/list'
 import Login from '@/components/parent/login'
 import LoginMobile from '@/components/parent/loginMobile'
+import ShowIndex from '@/components/index/index'
+import First from '@/components/index/first'
 
 Vue.use(Router)
 
@@ -35,6 +37,18 @@ export default new Router({
           name:'loginMobile',
           component:LoginMobile
         },
+      ]
+    },
+    {
+      path:'/index',
+      name:'show_index',
+      component:ShowIndex,
+      children:[
+        {
+          path:'/index/first',
+          name:'first',
+          component:First
+        }
       ]
     }
   ]

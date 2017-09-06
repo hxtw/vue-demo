@@ -64,6 +64,9 @@
           name:{
             required,
             minLength:minLength(10)
+          },
+          password:{
+            required
           }
         }
       },
@@ -75,11 +78,12 @@
             console.log("用户名不能为空");
             return false;
           }
+          
           if(!validate.password(that.sub.password)){
-            console.log("密码不能为空");
+            console.log("请输入正确的密码");
             return false;
           }
-          window.location.href = "#/parent/login"
+          window.location.href = "#/index/first"
         }
       }
     }
