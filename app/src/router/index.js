@@ -7,7 +7,10 @@ import Login from '@/components/parent/login'
 import LoginMobile from '@/components/parent/loginMobile'
 import ShowIndex from '@/components/index/index'
 import First from '@/components/index/first'
-
+import LayIndex from '@/components/demo1/index'
+import Home from '@/components/demo1/home'
+import Hindex from '@/components/haorong/index'
+import HaoIndex from '@/components/haorong/hindex'
 Vue.use(Router)
 
 export default new Router({
@@ -48,6 +51,30 @@ export default new Router({
           path:'/index/first',
           name:'first',
           component:First
+        }
+      ]
+    },
+    {
+      path:'/demo1',
+      name:'lay_index',
+      component:LayIndex,
+      children:[
+        {
+          path:'/demo1/home',
+          name:'home',
+          component:Home
+        }
+      ]
+    },
+    {
+      path:'/haorong',
+      name:'h_index',
+      component:Hindex,
+      children:[
+        {
+          path:'/haorong/hindex',
+          name:'hao_index',
+          component: HaoIndex
         }
       ]
     }

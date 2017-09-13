@@ -12,7 +12,7 @@ export default {
     }
   },
   beforeCreate:function(){
-    window.location.href = '#/parent/loginMobile'
+    window.location.href = '#/demo1/home'
   }
 }
 </script>
