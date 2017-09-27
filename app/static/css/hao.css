@@ -1,0 +1,145 @@
+*{
+  margin:0;
+  padding:0;
+}
+body{
+  font-family: 微软雅黑, Microsoft YaHei, tahoma, arial, sans-serif;
+  font-size:0.8rem;
+  background-color: #ffffff;
+}
+li{
+  list-style:none;
+}
+a{
+  text-decoration: none;
+}
+#container{
+  max-width: 750px;
+  min-width: 320px;
+  margin:0 auto;
+  height: 100%;
+}
+header{
+  margin:0;
+  padding:0;
+  position:absolute;
+  top:0;
+  left:0;
+}
+header img{
+  width:50%;
+  display: block;
+  margin-left:0.4rem;
+  margin-top:0.4rem;
+  /*position:absolute;*/
+  /*top:0.4rem;*/
+  /*left:0.2rem;*/
+}
+header a{
+  font-size: 0.46rem;
+  color:#8a8991;
+  display: block;
+  text-align:right;
+  margin-top:-0.46rem;
+  margin-right:0.3rem;
+  /*position:absolute;*/
+  /*top:0.4rem;*/
+  /*right: 0.5rem;*/
+}
+#container{
+  width:100%;
+}
+.banner img{
+  width:100%;
+}
+.banner img:nth-child(2){
+  width:70%;
+  padding:0.2rem 0;
+}
+.expert img{
+  width: 100%;
+}
+.left img{
+  width:45%;
+  float:left;
+  margin-left:0.4rem;
+}
+.right{
+  margin-left:-0.1rem;
+}
+.right img:first-child{
+  width:46.5%;
+}
+.right img:nth-child(2),.right img:nth-child(3){
+  width:22.5%;
+}
+.hui{
+  width:100%;
+  height:0.4rem;
+  background-color:#f5f5f5;
+  margin:0.5rem 0;
+}
+.recommend{
+
+}
+.re_head{
+  font-size:0.45rem;
+  color:#1a1a1a;
+  text-align:left;
+  margin-left:0.4rem;
+}
+
+.re_head a{
+  font-size: 0.4rem;
+  color:#aaacb8;
+  padding-left:6.75rem;
+}
+.recommend{
+  padding-bottom:1.48rem;
+}
+.recommend ul{
+  margin-top:0.5rem;
+  margin-left:0.5rem;
+}
+ul li{
+  height:4rem;
+
+}
+ul li img{
+  width:35%;
+  float:left;
+}
+ul li div{
+  width:94%;
+  /*padding-top:0.3rem;*/
+}
+ul li p{
+  display: block;
+  margin-left:4rem;
+
+}
+ul li p:first-child{
+  color:#0067bb;
+  font-size:0.48rem;
+  text-align:left;
+  padding-top:0.3rem;
+
+}
+ul li p:nth-child(2){
+  font-size:0.41rem;
+  color:#1a1a1a;
+  text-align:left;
+  padding-top: 0.21rem;
+}
+ul li p:nth-child(3){
+  font-size:0.34rem;
+  text-align:left;
+  color:#908f94;
+}
+
+.button img{
+  width:100%;
+  position:fixed;
+  bottom:0;
+  left:0;
+}

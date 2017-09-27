@@ -75,6 +75,20 @@ export default new Router({
           path:'/haorong/hindex',
           name:'hao_index',
           component: HaoIndex
+        },
+        {
+          path:'/haorong/expert',
+          name:'expert_list',
+          component:function(resolve){
+            require(['../components/haorong/expertList.vue'],resolve)
+          }
+        },
+        {
+          path:'/haorong/scroll',
+          name:'scroll',
+          component:function(resolve){
+            require(['../components/haorong/scroll.vue'],resolve)
+          }
         }
       ]
     }

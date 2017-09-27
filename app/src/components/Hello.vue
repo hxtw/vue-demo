@@ -12,7 +12,7 @@ export default {
     }
   },
   beforeCreate:function(){
-    window.location.href = '#/demo1/home'
+    window.location.href = '#/haorong/Hindex'
   }
 }
 </script>
