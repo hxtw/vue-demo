@@ -84,10 +84,10 @@ export default new Router({
           }
         },
         {
-          path:'/haorong/scroll',
-          name:'scroll',
+          path:'/haorong/list',
+          name:'list',
           component:function(resolve){
-            require(['../components/haorong/scroll.vue'],resolve)
+            require(['../components/haorong/list.vue'],resolve)
           }
         }
       ]
