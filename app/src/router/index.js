@@ -8,8 +8,10 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'index',
+      component: function(resolve){
+        require(['../components/index.vue'],resolve)
+      }
     }
   ]
 })
