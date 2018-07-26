@@ -6,14 +6,17 @@ import router from './router'
 import Vuex from 'vuex'
 import layer from '../static/layer.m'
 import axios from 'axios'
+import VeeValidate from 'vee-validate'
 // import qs from 'qs'
-// import vueLoader from 'vue-loader'
 
 Vue.config.productionTip = false;
-// Vue.use(vueLoader);
+const config = {
+  errorsBagName:'errorsBags',
+}
+
 Vue.use(Vuex);
 Vue.use(layer);
-// Vue.use(qs);
+Vue.use(VeeValidate,config);
 
 Vue.prototype.$axios = axios;
 axios.defaults.withCredentials = true;//让ajax携带cookie

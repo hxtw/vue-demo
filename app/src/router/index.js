@@ -12,6 +12,20 @@ export default new Router({
       component: function(resolve){
         require(['../components/index.vue'],resolve)
       }
-    }
+    },
+    {
+      path: '/basic',
+      name: 'basic',
+      component: function(resolve){
+        require(['../components/basic.vue'],resolve)
+      }
+    },
+    {
+      path: '/bankCard',
+      name: 'bankCard',
+      component: function(resolve){
+        require(['../components/bankCard.vue'],resolve)
+      }
+    },
   ]
 })
