@@ -11,7 +11,7 @@
       <section class="m-form">
         <div class="m-input">
           <label>持卡人</label>
-          <input type="text" name="username"/>
+          <input type="text" name="username" placeholder="请输入持卡人"/>
         </div>
       </section>
     </main>
@@ -41,13 +41,15 @@
   }
   .m-input {
     height: 1.3rem;
-    line-height: 1.3rem;
-    border: 0.01rem solid #e9e9e9;
-    /*margin-top*/
+    line-height:1.3rem;
+    /*border-bottom: 0.01rem solid #e9e9e9;*/
+    margin-top:.3rem;
+    border:1px solid red;
   }
 
   .m-input label {
     font-size: .3rem;
+    font-weight:bold;
     color: #333333;
   }
 </style>
