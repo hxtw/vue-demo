@@ -27,5 +27,12 @@ export default new Router({
         require(['../components/bankCard.vue'],resolve)
       }
     },
+    {
+      path: '/supply',
+      name: 'supply',
+      component: function(resolve){
+        require(['../components/supply.vue'],resolve)
+      }
+    },
   ]
 })

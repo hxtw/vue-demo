@@ -69,8 +69,9 @@ body {
   font-size: 0.34rem;
   font-weight: bold;
   width: 3.5rem;
-  margin-left: 2.6rem;
+  margin-left: 2rem;
   color:#333333;
+  text-align:center;
 }
 
 </style>
