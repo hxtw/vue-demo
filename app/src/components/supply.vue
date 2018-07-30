@@ -38,18 +38,8 @@
           <i class="u-icon"></i>
         </div>
         <div class="m-input">
-          <label>职业</label>
-          <input type="text" name="" placeholder="请选择"/>
-          <i class="u-icon"></i>
-        </div>
-        <div class="m-input">
-          <label>职业</label>
-          <input type="text" name="" placeholder="请选择"/>
-          <i class="u-icon"></i>
-        </div>
-        <div class="m-input">
-          <label>职业</label>
-          <input type="text" name="" placeholder="请选择"/>
+          <label>城市</label>
+          <input type="text" name="" readonly placeholder="请选择"/>
           <i class="u-icon"></i>
         </div>
       </section>

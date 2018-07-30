@@ -34,5 +34,12 @@ export default new Router({
         require(['../components/supply.vue'],resolve)
       }
     },
+    {
+      path: '/loanRepay',
+      name: 'loanRepay',
+      component: function(resolve){
+        require(['../components/loanRepay.vue'],resolve)
+      }
+    },
   ]
 })
