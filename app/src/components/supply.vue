@@ -39,11 +39,14 @@
         </div>
         <div class="m-input">
           <label>城市</label>
-          <input type="text" name="" readonly placeholder="请选择"/>
+          <input type="text" name="" @click="goCtiy()" readonly placeholder="请选择"/>
           <i class="u-icon"></i>
         </div>
       </section>
       <div class="m-button">立即提交</div>
+      <keep-alive>
+        <router-view v-if="$route.meta.keepAlive"></router-view>
+      </keep-alive>
     </main>
   </div>
 </template>
@@ -72,6 +75,9 @@
             ondragend: function (e) {
             },
           });
+        },
+        goCtiy(){
+          this.$router.push('/loanRepay');
         },
       },
     }

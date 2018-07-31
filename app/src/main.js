@@ -7,6 +7,7 @@ import Vuex from 'vuex'
 import layer from '../static/layer.m'
 import axios from 'axios'
 import VeeValidate from 'vee-validate'
+// import RegionPicker from 'vue-region-picker'
 // import qs from 'qs'
 
 Vue.config.productionTip = false;
@@ -17,6 +18,7 @@ const config = {
 Vue.use(Vuex);
 Vue.use(layer);
 Vue.use(VeeValidate,config);
+// Vue.use(RegionPicker);
 
 Vue.prototype.$axios = axios;
 axios.defaults.withCredentials = true;//让ajax携带cookie

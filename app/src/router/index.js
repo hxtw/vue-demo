@@ -32,14 +32,28 @@ export default new Router({
       name: 'supply',
       component: function(resolve){
         require(['../components/supply.vue'],resolve)
-      }
+      },
     },
     {
       path: '/loanRepay',
       name: 'loanRepay',
       component: function(resolve){
         require(['../components/loanRepay.vue'],resolve)
-      }
+      },
+    },
+    {
+      path: '/regist',
+      name: 'regist',
+      component: function(resolve){
+        require(['../components/regist.vue'],resolve)
+      },
+    },
+    {
+      path: '/cityDemo',
+      name: 'cityDemo',
+      component: function(resolve){
+        require(['../components/cityDemo.vue'],resolve)
+      },
     },
   ]
 })

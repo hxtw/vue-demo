@@ -18,7 +18,7 @@
         <span>25000<i>元</i></span>
       </div>
     </section>
-    <secction class="u-strip">
+    <section class="u-strip">
       <i></i>
       <ul>
         <li class="checked">提交申请</li>
@@ -27,7 +27,7 @@
         <li class="green">还款中</li>
         <li>还款结清</li>
       </ul>
-    </secction>
+    </section>
     <section class="m-details">
       <div class="u-block">
         <h3>第二期</h3>
@@ -53,7 +53,16 @@
 
 <script>
     export default {
-        name: "loanRepay"
+        name: "loanRepay",
+      data:{
+          return:{}
+      },
+      created:function(){},
+      methods:{},
+      beforeRouteLeave(to,from,next){
+          to.meta.keepAlive = true;
+          next();
+      }
     }
 </script>
 
@@ -173,7 +182,7 @@
     height:.65rem;
     line-height:.6rem;
     text-align:center;
-    -webkit-border-radius: .1rem;
+    -webkit-border-radius: .1cfrem;
     -moz-border-radius: .1rem;
     border-radius: .1rem;
     position: absolute;
