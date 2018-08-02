@@ -55,5 +55,12 @@ export default new Router({
         require(['../components/cityDemo.vue'],resolve)
       },
     },
+    {
+      path: '/sourceIndex',
+      name: 'sourceIndex',
+      component: function(resolve){
+        require(['../components/sourceIndex.vue'],resolve)
+      },
+    },
   ]
 })

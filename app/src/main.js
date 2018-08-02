@@ -7,6 +7,9 @@ import Vuex from 'vuex'
 import layer from '../static/layer.m'
 import axios from 'axios'
 import VeeValidate from 'vee-validate'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+import VueRange from 'vue-range'
 // import RegionPicker from 'vue-region-picker'
 // import qs from 'qs'
 
@@ -17,6 +20,8 @@ const config = {
 
 Vue.use(Vuex);
 Vue.use(layer);
+Vue.use(VueAwesomeSwiper);
+Vue.use(VueRange);
 Vue.use(VeeValidate,config);
 // Vue.use(RegionPicker);
 

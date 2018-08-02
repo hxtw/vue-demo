@@ -88,7 +88,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   header {
     background-color: #3a4a5a;
     height: 1rem;
