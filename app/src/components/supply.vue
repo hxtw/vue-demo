@@ -9,13 +9,19 @@
         <div class="money">
           <label>借款金额</label>
           <span><i>{{val2}}</i>元</span>
-          <vue-range :min="rmin" :max="rmax" :step="10" v-model="val2" style="width:95%;">
-          </vue-range>
         </div>
+        <vue-range :min="rmin" :max="rmax" :step="10" :barHeight="13" v-model="val2" style="width:95%;">
+        </vue-range>
         <div class="month">
           <label>借款期限</label>
-          <span><i>14</i>天</span>
-          <i class="u-icon"></i>
+          <span @click="toShow('2')"><i>{{res}}</i>天</span>
+          <vue-pickers
+            :show="show"
+            :columns="columns"
+            :defaultData="defaultData"
+            :selectData="pickData"
+            @cancel="close"
+            @confirm="confirmFn"></vue-pickers>
         </div>
       </section>
       <section class="m-form">
@@ -31,7 +37,7 @@
         </div>
         <div class="m-input">
           <label>职业</label>
-          <input type="text" name="" placeholder="请选择"/>
+          <input type="text" @click="toShow('1')" :value="job" name="" placeholder="请选择"/>
           <i class="u-icon"></i>
         </div>
         <div class="m-input">
@@ -41,12 +47,12 @@
         </div>
         <div class="m-input">
           <label>城市</label>
-          <input type="text" name="" @click="goCtiy()" readonly placeholder="请选择"/>
+          <input type="text" name="" readonly placeholder="请选择"/>
           <i class="u-icon"></i>
         </div>
         <div class="m-input">
           <label>城市</label>
-          <input type="text" name="" @click="goCtiy()" readonly placeholder="请选择"/>
+          <input type="text" name="" readonly placeholder="请选择"/>
           <i class="u-icon"></i>
         </div>
       </section>
@@ -60,15 +66,28 @@
 
 <script>
   import VueRange from "vue-range/src/index";
-
+  import vuePickers from 'vue-pickers';
   export default {
     name: "supply",
-    components: {VueRange},
+    components: {
+      VueRange,
+      vuePickers
+    },
     data() {
       return {
-        val2:200,
-        rmax:1000,
-        rmin:100
+        val2:3040,
+        rmax:150009,
+        rmin:1000,
+        show: false,
+        columns: 1,
+        defaultData:[{
+          text:14,
+          value:14
+        }],
+        pickData:{},
+        res:"14",
+        job:'',
+        typeIs:''
       }
     },
     created: function () {
@@ -79,6 +98,67 @@
       goCtiy() {
         this.$router.push('/loanRepay');
       },
+      close() {
+        this.show = false
+      },
+      confirmFn(val) {
+        this.show = false;
+        if(this.typeIs == '1'){
+          this.job = val.select1.text;
+        }else {
+          this.res = val.select1.text;
+        }
+        this.defaultData = [val.select1];
+        console.log(this.defaultData)
+      },
+      toShow(type) {
+        let that = this;
+        this.show = true;
+        that.typeIs = type;
+        if(type == '1') {
+          that.pickData = {
+            data1: [
+              {
+                text: '测试1',
+                value: '1-1'
+              },
+              {
+                text: '测试2',
+                value: '1-2'
+              },
+              {
+                text: '测试3',
+                value: '1-3'
+              },
+              {
+                text: '测试4',
+                value: '1-4'
+              },
+            ]
+          }
+        }else{
+          that.pickData={
+            data1: [
+              {
+                text:14,
+                value:14
+              },
+              {
+                text:18,
+                value:18
+              },
+              {
+                text:22,
+                value:22
+              },
+              {
+                text:30,
+                value:30
+              },
+            ]
+          }
+        }
+        }
     },
   }
 </script>
@@ -104,12 +184,20 @@
   .m-top label {
     font-size: .28rem;
     color: #999999;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .money{
+    max-width: 7.5rem;
+    display:flex;
   }
 
   .money span, .month span {
     font-size: .34rem;
     font-weight: bold;
-    margin-left: 2.6rem;
+    display: inline-block;
+    margin-left:auto;
   }
 
   .money i, .month i {
@@ -117,19 +205,20 @@
     font-size: .9rem;
     color: #465e6b;
     font-style: normal;
-    padding-right:.3rem;
+    padding-right:.2rem;
   }
   .month {
     margin-top:.25rem;
     border-bottom: 0.01rem solid #e5e5e5;
+    display:flex;
   }
 
   .month span {
-    /*margin-left: 2.3rem;*/
     display: inline-block;
-    width:1.4rem;
-    background:url("../../static/img/select-icon.png")no-repeat 1.3rem .4rem;
+    /*width:1.8rem;*/
+    background:url("../../static/img/select-icon.png")no-repeat right center;
     background-size:.16rem .26rem;
+    padding-right:.3rem;
   }
 
 
@@ -145,7 +234,8 @@
     line-height: 1rem;
     border-bottom: 0.01rem solid #e9e9e9;
     margin-top: .3rem;
-    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
   }
 
   .m-input label {
@@ -157,12 +247,12 @@
   .m-input input {
     font-size: .3rem;
     width: 2.5rem;
-    height: .36rem;
+    height: .56rem;
     outline: none;
     text-align: right;
-    margin-left: 1.8rem;
-    margin-top: .5rem;
-    color: #999999;
+    margin-left: 1.5rem;
+    margin-top: .23rem;
+    color: #333333;
   }
 
   .m-input input::-webkit-input-placeholder {
@@ -173,10 +263,10 @@
   .m-input .u-icon {
     width: .12rem;
     height: .22rem;
-    background: url('../../static/img/select-icon.png') no-repeat;
-    background-size: 100% 100%;
-    margin-top: .6rem;
-    margin-left: .3rem;
+    background: url('../../static/img/select-icon.png') no-repeat right center;
+    /*background-size: 100% 100%;*/
+    margin-top: .45rem;
+    /*margin-left: .3rem;*/
   }
   .m-button {
     font-size: .32rem;
