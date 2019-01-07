@@ -62,10 +62,25 @@ let share = {
         this.init.api = $api;
         // start
         wx.config(this.init.api);
-        //分享到朋友圈
         var that = this;
+        //微信扫一扫
         wx.ready(function () {
-            wx.onMenuShareTimeline({
+          wx.scanQRCode({
+            desc: 'scanQRCode desc',
+            needResult: 0, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+            scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+            success: function (res) {
+              // 回调
+            },
+            error: function(res){
+              if(res.errMsg.indexOf('function_not_exist') > 0){
+                alert('版本过低请升级')
+              }
+            }
+          });
+
+          //分享到朋友圈
+          wx.onMenuShareTimeline({
                 title: that.init.config.title, // 分享标题
                 link: that.init.config.link, // 分享链接
                 imgUrl: that.init.config.imgUrl, // 分享图标
